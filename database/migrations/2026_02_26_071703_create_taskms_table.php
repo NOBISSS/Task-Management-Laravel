@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('taskms', function (Blueprint $table) {
             $table->id();
+            $table->string('title',255);
+            $table->string('priority',15)->default('medium');
+            $table->text('description',255);
+            $table->string('status',15)->default('pending');
+            $table->foreignId('userm_id')->constrained('userms')->onDelete('cascade');
+            $table->boolean('isactive')->default(true);
             $table->timestamps();
         });
     }
