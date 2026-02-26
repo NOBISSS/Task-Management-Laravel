@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('priority',15)->default('medium');
             $table->text('description',255);
             $table->string('status',15)->default('pending');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('userms');
             $table->boolean('isactive')->default(true);
             $table->timestamps();
