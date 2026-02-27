@@ -83,9 +83,8 @@
         </div>
       @endif
 
-      <form method="POST" action="{{ route('login') }}">
+      <form method="POST" action="/signin/{{ old('email') ?? 'user' }}" class="auth-form">
         @csrf
-
         {{-- Email --}}
         <div class="form-group">
           <label class="form-label" for="email">Email Address</label>
@@ -152,7 +151,7 @@
         </div>
 
         {{-- Submit --}}
-        <button type="submit" class="btn-primary">
+        <button type="submit" class="btn-primary mt-2">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M15 3h6v6M10 14 21 3M21 15v6H3V3h6"/>
           </svg>

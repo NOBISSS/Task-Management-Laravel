@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Authentication.Signin');
 });
 
 Route::get('/signup', function () {
@@ -15,13 +15,15 @@ Route::get('/signin', function () {
 })->name('signin');
 
 // Placeholder POST routes (wire these to your AuthController later)
-Route::post('/login', function () {
+Route::post('/signin/{user}', function ($user) {
     // TODO: handle login
-})->name('login');
+    echo "Login POST route hit for user: $user. Implement login logic here.";
+})->name('signin.post');  
 
 Route::post('/register', function () {
     // TODO: handle register
-})->name('register');
+    echo "Register POST route hit. Implement registration logic here.";
+})->name('register.post');
 
 // Password reset (prevents route() errors in blade if Route::has() check is used)
 Route::get('/forgot-password', function () {

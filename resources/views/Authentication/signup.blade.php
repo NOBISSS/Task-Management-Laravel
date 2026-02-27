@@ -15,7 +15,7 @@
         <h1 class="form-title">Create your account</h1>
         <p class="form-subtitle">
           Already have an account?
-          <a href="{{ route('login') }}">Sign in instead →</a>
+          <a href="{{ route('signin') }}">Sign in instead →</a>
         </p>
       </div>
 
@@ -35,7 +35,7 @@
         </div>
       @endif
 
-      <form method="POST" action="{{ route('register') }}">
+      <form method="POST" action="{{ route('signup') }}">
         @csrf
 
         {{-- First & Last Name --}}
